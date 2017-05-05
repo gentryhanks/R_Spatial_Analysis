@@ -128,3 +128,28 @@ length(cities)
 northern <- c(FALSE, TRUE, FALSE, TRUE, FALSE)
 #this can be used to subset other variables
 cities[northern]
+character(8)
+#conversion
+as.character("8")
+#tests
+is.character(8)
+is.character("8")
+numeric(8)
+#conversions
+as.numeric(c("1980","-8","Geography"))
+as.numeric(c(FALSE,TRUE))
+#tests
+is.numeric(c(8, 8))
+is.numeric(c(8, 8, 8, "8"))
+employee <-list(name="Lex Comber", start.year= 2005, position="Professor")
+class(employee) <-"staff"
+print.staff <-function(x) {
+  cat("Name: ",x$name, "\n")
+  cat("Start Year: ",x$start.year, "\n")
+  cat("Job Title: ",x$position, "\n") }
+print(employee)
+print(unclass(employee))
+colours <- factor(c("red","blue","red","white","silver","red","white","silver","red","red","white",
+                    "silver","silver"),
+                  levels=c("red","blue","white","silver","black"))
+table(colours)
