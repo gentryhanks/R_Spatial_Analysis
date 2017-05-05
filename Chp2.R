@@ -95,3 +95,36 @@ trees[4,]            #get the whole fourth row
 attach(trees)
 Height
 search()
+attributes(trees)
+Height[Height > 75]   # pick off all heights greater than 75
+smith <- read.table(file.choose(), header=T)
+#Exercises from Part 3 of Owen Manual
+W <- seq(1,3)
+W
+rep(W,3)
+seq(10,10.5,length=12) 
+#Example of vector assignments
+tree.heights <- c(4.3,7.1,6.3,5.2,3.2,2.1)
+tree.heights
+tree.heights**2
+sum(tree.heights)
+mean(tree.heights)
+max.height <- max(tree.heights)
+max.height
+tree.heights
+tree.heights[1]  #first element
+tree.heights[1:3] #a subset of elements from 1 to 3
+sqrt(tree.heights[1:3])  #squareroot of the subset
+tree.heights[c(5,3,2)]  #a subset of elements of 5, 3, 2: notice the ordering
+
+#example of character variable assignment
+name <- "Lex Comber"
+name
+#These can be assigned to a vector of character variables
+cities <- c("Leicester","Newcastle","London","Durham","Exeter")
+cities
+length(cities)
+#an example of a logical variable
+northern <- c(FALSE, TRUE, FALSE, TRUE, FALSE)
+#this can be used to subset other variables
+cities[northern]
