@@ -68,3 +68,30 @@ prod(1:8)                # same as factorial(8)
 
 seq(1,5) # same as 1:5
 seq(1,5,by=.5)     # increment by 0.5
+
+rep(10,10)                  # repeat the value 10 ten times
+rep("gentry", 10)
+rep(c("A","B","C","D"),2)   # repeat the string A,B,C,D twice
+matrix(rep(0,16),nrow=4) # a 4x4 matrix of zeroes
+x <- scan()        # read what is typed into the variable x
+passengers <- scan()
+new.data <- data.frame()    # creates an "empty" data frame
+new.data <- edit(new.data)  # request that changes made are written to data frame
+new.data <- data.frame()    # creates an "empty" data frame
+fix(new.data)               # changes saved automatically
+
+seatbelt <- c("Y","N","Y","Y","Y","Y","Y","Y","Y","Y", #return
+              "N","Y","Y","Y","Y","Y","Y","Y","Y","Y","Y","Y","Y", #return
+              "Y","Y","N","Y","Y","Y","Y")
+car.dat <- data.frame(passengers,seatbelt)
+data()
+data("trees")
+data(trees)
+trees
+trees$Height
+sum(trees$Height)    # sum of just these values
+trees [4,3]          # entry at fourth row, third column
+trees[4,]            #get the whole fourth row
+attach(trees)
+Height
+search()
