@@ -153,3 +153,101 @@ colours <- factor(c("red","blue","red","white","silver","red","white","silver","
                     "silver","silver"),
                   levels=c("red","blue","white","silver","black"))
 table(colours)
+colours2 <- c("red","blue","red","white",
+              "silver","red","white","silver",
+              "red","red","white","silver")
+table(colours2)
+#new factor variable
+car.type <- factor(c("saloon","saloon","hatchback",
+                     "saloon","convertible","hatchback","convertible",
+                     "saloon","hatchback","saloon","saloon",
+                     "saloon","hatchback"),
+                   levels = c("saloon","hatchback","convertible"))
+table(car.type, colours)
+crosstab <- table(car.type,colours)
+table(colours,car.type)
+#colours[4] <-"orange"
+colours
+
+
+engine <- ordered(c("1.1litre","1.3litre","1.1litre",
+                    "1.3litre","1.6litre","1.3litre","1.6litre",
+                    "1.1litre","1.3litre","1.1litre","1,1litre",
+                    "1.3litre","1.3litre"),
+                  levels=c("1.1litre","1.3litre","1.6litre"))
+engine > "1.1litre"
+colours[engine > "1.1litre"]
+table(car.type[engine < "1.6litre"])
+table(colours[(engine >= "1.3litre") & (car.type == "hatchback")])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+library(GISTools)
+data("georgia")
+#select the first element
+appling <- georgia.polys[[1]]
+#set the plot extent
+plot(appling, asp=1, type='n', xlab="Easting",
+     ylab="Northing")
+#plot the selected features with hatching
+polygon(appling, density=14, angle=135)
+plot(appling, asp=1, type='n', xlab="Easting", ylab="Northing")
+     polygon(appling, col=rgb(0,0.5,0.7,0.4))
+    
+#set the plot extent
+plot(appling, asp=1, type='n', xlab="Easting", ylab="Northing")
+#plot the points
+# points(x = runif(500,126,132)*10000,
+#        y=runif(500,103,108)*10000, pch=16, col='red')
+polygon(appling, col = rgb(0,0.5,0.7,0.4))
+
+plot(appling, asp=1, type='n', xlab="Easting", ylab="Northing")
+polygon(appling, col="#B3B333")
+#add text, specifying its placement, color, and size.
+text(1287000,1053000, "Appling County",cex=1.5)
+text(1287000,1049000, "Georgia",col='darkred')
+
+
+
+
+
+
+plot(c(-1.5, 1.5),c(-1.5,1.5),asp=1, type='n')
+#plot the green/blue rectangle
+rect(-0.5,-0.5,0.5,0.5, border=NA, col=rgb(0,0.5,0.5,0.7))
+#then the second rectangle
+rect(0,0,1,1, co=rgb(1,0.5,0.5,0.7))
+
+
+#load some grid data
+data("meuse.grid")
+#define a SpatialPixelsDataFrame from the data
+mat = SpatialPixelsDataFrame(points = meuse.grid[c("x", "y")],
+                             data = meuse.grid)
+#set some plot parameters (1 row, 2 columns)
+par(mfrow = c(1,2))
+#set the plot margins
+par(mar = c(1,2))
+#plot the points using default shading
+image(mat, "dist")
+#load the package
+library(RColorBrewer)
+#select and examine a color palette with 7 classes
+greenpal<- brewer.pal(7,'Greens')
+#and now use this to plot the data
+image(mat, "dist", col=greenpal)
+#reset par
+par(mfrow = c(1,1))
+
