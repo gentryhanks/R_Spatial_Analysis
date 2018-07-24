@@ -251,3 +251,6 @@ image(mat, "dist", col=greenpal)
 #reset par
 par(mfrow = c(1,1))
 
+
+
+
