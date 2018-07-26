@@ -1,0 +1,12 @@
+---
+title: "ChoroplethR Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(choroplethr)
+data(df_state_demographics)
+df_state_demographics
+```
+
