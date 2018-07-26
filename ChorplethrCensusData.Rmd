@@ -11,7 +11,7 @@ df_state_demographics
 ```
 
 ```{r}
-df_state_demographics$value = df_state_demographics$per_capita_income
+df_state_demographics$value = df_state_demographics$percent_black
 
 ```
 
