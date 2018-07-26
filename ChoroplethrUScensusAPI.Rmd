@@ -1,0 +1,23 @@
+---
+title: "Mapping using Choroplethr and US Census Data via API"
+output: html_notebook
+---
+
+```{r}
+library(acs)
+api.key.install("ee474b2eac586e29987a734edac87317e2facdfe")
+acs.tables.install()
+```
+```{r}
+library(choroplethr)
+
+df_2010 = get_state_demographics(2010)
+df_2010
+```
+```{r}
+df_2010$value = df_2010$per_capita_income
+state_choropleth(df_2010,
+                 title = "2010 per Capita Income",
+                 legend = "Dollars")
+
+```
